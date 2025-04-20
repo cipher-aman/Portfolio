@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/animations.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- GSAP core + ScrollTrigger plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
@@ -26,6 +28,7 @@
 <body>
     <!-- Navigation -->
     <nav class="main-nav">
+        <div class="logo">Aman Bansal</div>
         <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -36,63 +39,223 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <h1>Your Name</h1>
-        <p>A short tagline or intro goes here.</p>
+        <div class="hero-content">
+            <h1>Aman Bansal</h1>
+            <p class="tagline">Full Stack Developer & UI/UX Designer</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn primary-btn">View My Work</a>
+                <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-decoration"></div>
+        <div class="scroll-indicator">Scroll to explore</div>
     </section>
 
     <!-- About Me Section -->
-    <section id="about"></section>
+    <section id="about">
+        <div class="section-heading">
+            <h2>About Me</h2>
+            <div class="heading-underline"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hello! I'm a passionate developer focused on creating elegant, effective digital solutions. With expertise in front-end and back-end technologies, I strive to build applications that are not only functional but also provide exceptional user experiences.</p>
+                
+                <h3>My Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-name">HTML/CSS</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">React</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Node.js</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="image-container">
+                    <img src="/api/placeholder/400/400" alt="Profile placeholder" />
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Section -->
     <section id="projects">
+        <div class="section-heading">
+            <h2>My Projects</h2>
+            <div class="heading-underline"></div>
+        </div>
+        
         <div id="viewer-count" class="viewer-count">
             <!-- JS will fill this in -->
+            <span>Currently viewing: <strong>1 visitor</strong></span>
         </div>
+        
         <div class="projects-grid">
             <div class="project-card">
-                <h3>Project One</h3>
-                <p>Short description.</p>
+                <div class="project-card-inner">
+                    <h3>E-Commerce Platform</h3>
+                    <p>A full-featured online shopping platform with user authentication, product catalog, and payment integration.</p>
+                    <div class="project-details">
+                      <p class="project-tech">Technologies used: React, Node.js, MongoDB, Stripe API</p>
+                      <div class="project-links">
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                      </div>
+                    </div>
+                    <div class="project-visual-cue"></div>
+                </div>
             </div>
+            
             <div class="project-card">
-                <h3>Project Two</h3>
-                <p>Another one.</p>
+                <div class="project-card-inner">
+                    <h3>Task Management App</h3>
+                    <p>A productivity application for organizing tasks with drag-and-drop functionality and real-time updates.</p>
+                    <div class="project-details">
+                      <p class="project-tech">Technologies used: Vue.js, Firebase, CSS Grid</p>
+                      <div class="project-links">
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                      </div>
+                    </div>
+                    <div class="project-visual-cue"></div>
+                </div>
             </div>
+            
             <div class="project-card">
-                <h3>Project Three</h3>
-                <p>And another.</p>
+                <div class="project-card-inner">
+                    <h3>Portfolio Website</h3>
+                    <p>An interactive portfolio site with context-aware features, animations, and responsive design.</p>
+                    <div class="project-details">
+                      <p class="project-tech">Technologies used: HTML, CSS, JavaScript, GSAP</p>
+                      <div class="project-links">
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                      </div>
+                    </div>
+                    <div class="project-visual-cue"></div>
+                </div>
             </div>
-            <!-- Add more if needed -->
+        </div>
+        
+        <!-- Testimonials -->
+        <div class="testimonials-container">
+            <h3>What Others Say</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"This portfolio showcases exceptional talent and creativity!"</p>
+                    <cite>- Design Professor</cite>
+                </div>
+                <div class="testimonial">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"The multimodal interactions really bring this portfolio to life."</p>
+                    <cite>- UX Designer</cite>
+                </div>
+                <div class="testimonial">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"Impressive context-aware features that adapt to the user."</p>
+                    <cite>- Tech Recruiter</cite>
+                </div>
+            </div>
+        </div>
+        
+        <div id="recent-visitors" class="recent-visitors">
+            <h4>Recent Visitors</h4>
+            <ul class="visitor-list">
+                <li class="visitor-item">
+                    <span class="visitor-location">New York, USA</span>
+                    <span class="visitor-time">5 mins ago</span>
+                </li>
+                <li class="visitor-item">
+                    <span class="visitor-location">London, UK</span>
+                    <span class="visitor-time">27 mins ago</span>
+                </li>
+                <li class="visitor-item">
+                    <span class="visitor-location">Tokyo, Japan</span>
+                    <span class="visitor-time">1 hour ago</span>
+                </li>
+            </ul>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form" action="#" novalidate>
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" required>
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="you@example.com" required>
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="4" placeholder="Say hello…" required></textarea>
-          </label>
-          <button type="submit">Send</button>
-          <p class="form-note">* This form is for demo purposes.</p>
-        </form>
+        <div class="section-heading">
+            <h2>Contact Me</h2>
+            <div class="heading-underline"></div>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>aman23074@iiiitd.ac.in</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 123-456-7890</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Delhi, India</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <form id="contact-form" action="#" novalidate>
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name" required>
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="you@example.com" required>
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="4" placeholder="Say hello…" required></textarea>
+              </label>
+              <button type="submit">Send Message</button>
+              <p class="form-note">* This form is for demo purposes.</p>
+            </form>
+        </div>
     </section>      
 
     <!-- Avatar Assistant -->
-    <div id="assistant">
-        <div id="greeting-text"></div>
+    <div id="assistant" data-mood="neutral" data-time="day">
+        <div id="greeting-text">Welcome to my portfolio!</div>
     </div>
 
     <!-- Footer -->
-    <footer></footer>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Aman Bansal. All rights reserved.</p>
+            <p class="footer-credits">Built with <span class="heart">❤</span> and modern web technologies</p>
+        </div>
+    </footer>
 
 </body>
 </html>

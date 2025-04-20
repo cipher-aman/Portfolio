@@ -67,4 +67,47 @@ window.addEventListener("load", () => {
 window.addEventListener("resize", () => {
     ScrollTrigger.refresh();
 });
+// Enhanced 3D card transform with depth and lighting effects
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Calculate rotation based on mouse position
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 15;
+    const rotateY = (centerX - x) / -15;
+    
+    // Apply transform with enhanced perspective
+    card.style.transform = 
+      `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+      
+    // Dynamic shadow based on position
+    const shadowX = (centerX - x) / 20;
+    const shadowY = (centerY - y) / 20;
+    card.style.boxShadow = `${shadowX}px ${shadowY}px 30px rgba(0,0,0,0.2)`;
+    
+    // Add highlight effect based on mouse position
+    const shine = document.createElement('div');
+    shine.style.position = 'absolute';
+    shine.style.top = '0';
+    shine.style.left = '0';
+    shine.style.right = '0';
+    shine.style.bottom = '0';
+    shine.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.2), transparent 80%)`;
+    shine.style.pointerEvents = 'none';
+    
+    // Remove any existing highlights and add the new one
+    card.querySelectorAll('.card-highlight').forEach(el => el.remove());
+    shine.classList.add('card-highlight');
+    card.appendChild(shine);
+  });
   
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+    card.style.boxShadow = '8px 8px 16px #080808, -8px -8px 16px #161616';
+    card.querySelectorAll('.card-highlight').forEach(el => el.remove());
+  });
+});
