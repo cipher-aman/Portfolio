@@ -1,0 +1,44 @@
+/* responsive.css */
+
+/* Tablet & up */
+@media (min-width: 600px) {
+    #hero h1 {
+      font-size: 4rem;
+    }
+    #hero p {
+      font-size: 1.5rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      overflow-x: unset;
+      scroll-snap-type: none;
+    }
+  
+    .project-card {
+      min-width: unset;
+      flex: unset;
+      scroll-snap-align: unset;
+    }
+  }
+  
+  /* Desktop & up */
+  @media (min-width: 900px) {
+    nav {
+      gap: 3rem;
+    }
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Wide screens */
+  @media (min-width: 1200px) {
+    .projects-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    #hero {
+      padding: 0 2rem;
+    }
+  }
+  

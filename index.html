@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+
+    <!-- GSAP core + ScrollTrigger plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" defer></script>
+    <!-- Context‑aware features -->
+    <script src="js/context-aware.js" defer></script>
+    <!-- Lottie for avatar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" defer></script>
+    <!-- Avatar assistant logic -->
+    <script src="js/avatar.js" defer></script>
+    <script src="js/social.js" defer></script>
+    <script src="js/audio.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Your Name</h1>
+        <p>A short tagline or intro goes here.</p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about"></section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div id="viewer-count" class="viewer-count">
+            <!-- JS will fill this in -->
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Project One</h3>
+                <p>Short description.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project Two</h3>
+                <p>Another one.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project Three</h3>
+                <p>And another.</p>
+            </div>
+            <!-- Add more if needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="#" novalidate>
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Say hello…" required></textarea>
+          </label>
+          <button type="submit">Send</button>
+          <p class="form-note">* This form is for demo purposes.</p>
+        </form>
+    </section>      
+
+    <!-- Avatar Assistant -->
+    <div id="assistant">
+        <div id="greeting-text"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer></footer>
+
+</body>
+</html>

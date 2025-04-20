@@ -1,0 +1,219 @@
+/* style.css */
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Source Code Pro', monospace;
+  background: #111;
+  color: #eee;
+  scroll-behavior: smooth;
+}
+
+/* CSS Variables */
+:root {
+  --accent: #39ff14;
+  --bg-gradient: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+}
+
+/* Navigation Layout */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;       /* ensure it sits above everything */
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+
+/* Hero Section */
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-gradient);
+  background-size: cover;
+  text-align: center;
+  padding: 0 1rem;
+}
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+#hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* Projects Section Layout */
+#projects {
+  padding: 4rem 1rem;
+  background: #111;
+}
+.projects-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+}
+.project-card {
+    min-width: 80%;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(57, 255, 20, 0.3);    /* subtle neon accent */
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transition: transform 0.3s, box-shadow 0.3s;  /* bring the hover transition here */
+}
+
+/* Generic Sections */
+section {
+  min-height: 100vh;
+  padding-top: 5rem; /* offset for fixed nav */
+}
+
+/* ─── Context‑Aware Theming ───────────────────────── */
+body.light-theme {
+    --bg-gradient: linear-gradient(135deg, #f0f0f0, #fafafa);
+    background-color: #fff;
+    color: #111;
+}
+body.dark-theme {
+    --bg-gradient: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    background-color: #111;
+    color: #eee;
+}
+  
+/* Make sure your hero still uses the CSS variable: */
+#hero {
+    background: var(--bg-gradient);
+}
+  
+/* ─── Device Detection Helpers ───────────────────── */
+body.mobile nav {
+    padding: 0.75rem 0;   /* slightly larger touch targets */
+}
+body.desktop nav {
+    padding: 1rem 0;      /* default */
+}
+
+/* ─── Avatar Assistant ───────────────────────────── */
+#assistant {
+  position: fixed;
+  bottom: 2rem;          /* lift avatar up a bit so greeting isn't cut by bottom edge */
+  right: 2rem;           /* move left, away from scrollbar */
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  overflow: visible;     /* allow greeting to overflow outside */
+  z-index: 999;
+}
+#greeting-text {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);  /* sit just above the avatar */
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);/* subtle backdrop */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  white-space: normal;
+  max-width: 200px;            /* constrain width */
+  font-size: 1.2rem;
+  color: var(--accent);         /* neon-green text */
+  text-align: center;
+}
+/* Viewer counter styling */
+.viewer-count {
+  font-size: 1rem;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: monospace;
+}
+/* ─── Contact Form ───────────────────────────────── */
+#contact {
+  padding: 4rem 1rem;
+  background: #1a1a1a;
+  color: #eee;
+}
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--accent);
+}
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+#contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+#contact-form input,
+#contact-form textarea {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  background: rgba(255,255,255,0.05);
+  color: #eee;
+  font-family: inherit;
+}
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: 2px solid var(--accent);
+}
+#contact-form button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  background: var(--accent);
+  border: none;
+  border-radius: 4px;
+  color: #111;
+  transition: transform 0.2s;
+}
+#contact-form button:hover {
+  transform: translateY(-2px);
+}
+.form-note {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-align: center;
+}
