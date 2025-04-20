@@ -1,5 +1,5 @@
 // Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger, Draggable);
+gsap.registerPlugin(ScrollTrigger);
 
 // 1) Hero Section Entrance
 gsap.from("#hero h1", {
