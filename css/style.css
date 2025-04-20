@@ -744,3 +744,61 @@ body.landscape .projects-grid {
   max-height: 70vh;
   overflow-y: auto;
 }
+/* Additional styles for resume integration */
+
+/* Achievements list styling */
+.achievements-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+}
+
+.achievements-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Timeline styling enhancement */
+.timeline {
+  margin-bottom: 2rem;
+}
+
+.timeline-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--accent-primary);
+}
+
+.timeline-item h4 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-date {
+  color: var(--accent-primary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Project card enhancements */
+.project-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card-inner p {
+  flex-grow: 1;
+}
+
+.project-tech {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Contact section update */
+.contact-item p {
+  margin-bottom: 0;
+}
